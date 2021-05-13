@@ -116,3 +116,52 @@
     * Rx.js
 * *The learning curve is clear-cut and becomes easier over time* 
 
+
+# **Companies using Angular**
+
+* Some top tier companies that use angular are:
+    * Nike
+    * Google
+    * Upwork
+    * Forbes
+    * HBO
+    * Sony
+    * GM - General Motors
+ 
+# **Angular Pre-requisutes**
+
+* NodeJS:
+    * Angular uses NodeJS as its base for a large part of its build environment
+
+* Angular CLI:
+    * Angular team has created a command-line interface tool to make it easier to bootstrap and develop angular applications
+    * Installation command:
+*     npm install -g @angular/cli
+    * Confirmation:
+*     ng --version
+    
+* IDE or text editor:
+    * Visual studio code is a powerful source code editor that is available on Windows, Mac OS, and Linux platforms
+
+
+# **Whats in it for you?**
+
+* What are angular components?
+* Creating an angular component.
+* Component decorator metadata.
+
+# **What are Angular components?**
+
+* Consider components as lego blocks, they basically are combined together to form the final application.
+  * ie:
+      * logo component
+      * sign in component
+      * create account component
+      * image component
+* Generally these components don't affect the working of each other, but however when embedded the define the UI of your application
+
+# **Common features**
+
+* They are the building blocks of an application. Generally you have a root component which is basically the app component and then it branches out into other components           creating a hierarchy.
+* Angular components are a subset of directives 
+
