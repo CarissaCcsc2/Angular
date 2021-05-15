@@ -1,12 +1,18 @@
 # Angular
 
 # How to run angular:
--How to install Typescript:
-  npm install -g typescript
-.
-.
-.
-.
+* -How to install Typescript:
+*   npm install -g typescript
+* -How to create a new application 
+*   ng new < application name > 
+* -How to compile:
+*   ng serve
+* -Uses **localhost:4200**
+* -How to create a component:
+*   ng g c < component name >
+*   *Creates four different files once executed*
+    * Note: always incorporate selectors into final HTML file
+
 
 
 ## These are my notes on Angular:
@@ -116,3 +122,115 @@
     * Rx.js
 * *The learning curve is clear-cut and becomes easier over time* 
 
+
+# **Companies using Angular**
+
+* Some top tier companies that use angular are:
+    * Nike
+    * Google
+    * Upwork
+    * Forbes
+    * HBO
+    * Sony
+    * GM - General Motors
+ 
+# **Angular Pre-requisutes**
+
+* NodeJS:
+    * Angular uses NodeJS as its base for a large part of its build environment
+
+* Angular CLI:
+    * Angular team has created a command-line interface tool to make it easier to bootstrap and develop angular applications
+    * Installation command:
+*     npm install -g @angular/cli
+    * Confirmation:
+*     ng --version
+    
+* IDE or text editor:
+    * Visual studio code is a powerful source code editor that is available on Windows, Mac OS, and Linux platforms
+
+
+# **Whats in it for you?**
+
+* What are angular components?
+* Creating an angular component.
+* Component decorator metadata.
+
+# **What are Angular components?**
+
+* Consider components as lego blocks, they basically are combined together to form the final application.
+  * ie:
+      * logo component
+      * sign in component
+      * create account component
+      * image component
+* Generally these components don't affect the working of each other, but however when embedded the define the UI of your application
+
+# **Common features**
+
+* They are the building blocks of an application. Generally you have a root component which is basically the app component and then it branches out into other components           creating a hierarchy.
+* Angular components are a subset of directives 
+* There are three types of directives:
+    * Attribute directives 
+    * Structural directives 
+    * Component directives 
+* Only one component can be instantiated per element in a template. Components are typically custom HTML elements and each of these elements can instantiate only one component.
+* A Typescript class is used to create a component. The class is then decorated with the **'@ component decorator'**. The decorator accepts a metadata object that gives           information about the component.
+* A component must belong to the **ng** module in order for it to be usable by another component or application.
+* Components control their runtime behavior by implementing life cycle hooks. 
+
+
+# **Components: Meta Data**
+
+* List of properties of the meta data object:
+    * **Selector**: A css selector that identifies this particular component in a template. This corresponds to the HTML tag, however the same has to be included in the parent         component.
+    * **Template**: An inline defined template for the view. The template can be used to provide some particular markup. The markup could typically include some headings or           paragraphs that are displayed on the UI.
+    * **Template URL**: The URL for the external file containing the template for the view.
+    *  **Styles**: Also inline defined styles that can be applied to the component view. So any code that you provide in the '.CSS' file can also be included here. 
+    *  **Style URLS**: A list of URLs to your style sheet that are applied on yiur components view.
+    *  **Providers**: An array where certain services can be registered for your component.
+    *  **Animations**: Animations that can be listed for your components. 
+
+# **What's in it for you?**
+
+* What is dependency injection?
+* Demerti of not using DI.
+* DI as a design pattern
+* Demo
+
+# **Dependency Injection**
+
+* Angular uses the concept of components. The entire UI of the application is divided into several components. What if all of these components perform similar tasks?
+* Consider all of these components performing common tasks, like acessing the datavase, rendering images on the view, etc. 
+* To avoid rewriting code, angular services can be used.
+* These services can then be **injected** into the components that require that service.
+* DI keeps the code flexible, testable, and mutable. 
+* Classes can inherit external logic without knowing how to create it.
+* DI benefots directives, pipes, and components. 
+
+# **Demerit of not using DI**
+
+* Consider a 'postal details' class that is dependent on the 'Number' and the 'Address' class:
+*     class Number {
+*        constructor (){}
+*     }
+*     class Address {
+*        constructor (){}
+*     }
+
+
+*     class postalDetails{
+*        Number;
+*        Address;
+*        constructor(){
+*        this.Number = new Number();
+*        this.Address = new Address():
+*        }
+
+
+* In 'postal details' the constructor creates copies of the 'Number' and 'Address'. So when you instantiate a new postal details class the constructor instantiates a uniqe         Number and Address. However this is a problem. Let's assume the 'Number' and 'Address' class constructs now accepts parameters. When you change the 'Number' class the           'postal details' class gets broken.
+
+* To fix this, we need to pass parameters to the 'Number' constructor so this applies to 'Address' as well.
+* The first drawback is that the code is not flexible. When the dependencies change, 'postal details' must be changed too.
+* The second drawback is that the code is not suitable for testing. Once you instantiate the 'postal details' class you get the same 'Number' and 'Address'. Even if you change the classes everytime, what if these classes are dependent on other classes? **It'll be a chain reaction**.
+* To over come this: use dependency injection. 
