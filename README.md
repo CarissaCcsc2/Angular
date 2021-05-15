@@ -211,21 +211,21 @@
 # **Demerit of not using DI**
 
 * Consider a 'postal details' class that is dependent on the 'Number' and the 'Address' class:
-*   class Number {
-*     constructor (){}
-*   }
-*   class Address {
-*     constructor (){}
-*   }
-
-
-*   class postalDetails{
-*     Number;
-*     Address;
-*     constructor(){
-*       this.Number = new Number();
-*       this.Address = new Address():
+*     class Number {
+*        constructor (){}
 *     }
+*     class Address {
+*        constructor (){}
+*     }
+
+
+*     class postalDetails{
+*        Number;
+*        Address;
+*        constructor(){
+*        this.Number = new Number();
+*        this.Address = new Address():
+*        }
 
 
 * In 'postal details' the constructor creates copies of the 'Number' and 'Address'. So when you instantiate a new postal details class the constructor instantiates a uniqe         Number and Address. However this is a problem. Let's assume the 'Number' and 'Address' class constructs now accepts parameters. When you change the 'Number' class the           'postal details' class gets broken.
