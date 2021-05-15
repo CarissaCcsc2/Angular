@@ -2,14 +2,14 @@
 
 # How to run angular:
 * -How to install Typescript:
-*   npm install -g typescript
+*     npm install -g typescript
 * -How to create a new application 
-*   ng new < application name > 
+*     ng new < application name > 
 * -How to compile:
-*   ng serve
+*     ng serve
 * -Uses **localhost:4200**
 * -How to create a component:
-*   ng g c < component name >
+*     ng g c < component name >
 *   *Creates four different files once executed*
     * Note: always incorporate selectors into final HTML file
 
