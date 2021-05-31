@@ -12,6 +12,9 @@
 *     ng g c < component name >
 *   *Creates four different files once executed*
     * Note: always incorporate selectors into final HTML file
+* -How to create a service:
+*     ng g s <name of service>
+   
 
 
 
@@ -234,3 +237,31 @@
 * The first drawback is that the code is not flexible. When the dependencies change, 'postal details' must be changed too.
 * The second drawback is that the code is not suitable for testing. Once you instantiate the 'postal details' class you get the same 'Number' and 'Address'. Even if you change the classes everytime, what if these classes are dependent on other classes? **It'll be a chain reaction**.
 * To over come this: use dependency injection. 
+
+
+# **DI as a Design Pattern**
+
+*  DI is a coding pattern where a class receives its dependencies from an external source rather than creating them on its own.
+*  EX.
+*     class PostalDetails{
+         number;
+         address;
+         constructor(number, address){
+            this.number = number;
+            this.address = address;
+          }
+
+*  Here we moves the definition of dependencies from inside the constructor to the constructors parameters. So the 'PostalDetails' class doesn't create 
+*  the dependencies anymore, it just consumes them. So with that we overcome the drawback of not using DI.
+
+# **Demo Notes**
+
+*  Services, classes, modules, competence, all of these are benefactors of DI.
+*  Normally components are used to ensure a good user experience.
+      * These components do not generally execute tasks.
+*  In order to execute tasks, using *Services* is ideal
+*  A component can delegate tasks like fetching data from the server, validating user input, or logging directly to the console to the service.
+*  These tasks can be made available to any component in the app.
+*  To create a service:
+*     ng g s <name of service>
+*     creates 2 '.ts' files
